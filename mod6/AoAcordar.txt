@@ -1,0 +1,16 @@
+1. Acordar abrindo os olhos.
+2. Se descobrir
+3. Levantar o tronco
+4. Girar tronco e pernas para o lado de fora da cama
+5. Levantar da cama
+6. Calçar os chinelos
+7. Caminhar até a porta
+8. Se a porta está fechada
+    1. Pegar na machaneta
+    2. Empurrar a machaneta para baixo
+    3. Dar um passo para trás
+    4. Puxar a porta
+    5. Soltar a machaneta
+    6. Caminhar para fora do quarto.
+9. Senão, se a porta está aberta
+    1. Caminhar para fora do quarto

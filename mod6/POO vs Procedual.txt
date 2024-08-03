@@ -1,0 +1,5 @@
+Programação Procedural
+    Programa estruturado através de 1 classe com vários atributos e funções de objetos diferentes dentro da mesma classe.
+
+POO
+    Programa estrutura em que cada objeto é 1 classe e dentro de cada classe contém apenas os seus atributos e funções individuais e relacionamento entre as classes.
