@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Tarefa_Wrapper.iml" filepath="$PROJECT_DIR$/Tarefa_Wrapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TarefaWrapper.iml" filepath="$PROJECT_DIR$/TarefaWrapper.iml" />
     </modules>
   </component>
 </project>
