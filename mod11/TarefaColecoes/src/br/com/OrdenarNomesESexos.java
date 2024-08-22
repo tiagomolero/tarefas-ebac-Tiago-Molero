@@ -27,6 +27,7 @@ public class OrdenarNomesESexos {
 
         String[] delimitadorVirg = lista.split(",");
 
+
         for(String p : delimitadorVirg){
             String pe = p.toLowerCase().replace(" ","");
             String[] pessoaArray = pe.split("-");

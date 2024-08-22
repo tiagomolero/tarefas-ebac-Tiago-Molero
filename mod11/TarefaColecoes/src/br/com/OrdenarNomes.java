@@ -22,8 +22,11 @@ public class OrdenarNomes {
         //Faz a separação dos itens delimitados por "," e adiciona no Array
         String[] nArray = n.split(",");
 
-        //Insere os nomes dentro da Interface List
+        //Percorre cada nome dentro do Array
         for(String s : nArray){
+
+            //Remove o espaços externo do nome e altera eles para caixa baixa.
+            //Por fim, insere o nome na Lista de Nomes
             listaNomes.add(s.trim().toLowerCase());
         }
 
