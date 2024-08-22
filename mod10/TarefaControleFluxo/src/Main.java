@@ -45,6 +45,7 @@ public class Main {
         }else{
             System.out.println("A nota do aluno(a) " + nome + " foi: " + media);
             System.out.println("VOCÊ FOI REPROVADO :(");
+
         }
     }
 
