@@ -36,6 +36,10 @@ public abstract class Carro {
         this.placa = placa;
     }
 
+    public Class getClasse(){
+        return this.placa.getClass();
+    }
+
     @Override
     public String toString() {
         return "Carro{" +

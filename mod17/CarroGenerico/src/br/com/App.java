@@ -5,6 +5,8 @@ import br.com.domain.Carro;
 import br.com.domain.Fiat;
 import br.com.domain.Renault;
 
+import java.util.Map;
+
 public class App {
 
     public static void main(String[] args) {
@@ -15,6 +17,12 @@ public class App {
 
         carros.cadastrarCarro(siena);
         carros.cadastrarCarro(kwid);
+
+        System.out.println("\nCARRO CONSULTADO");
+        System.out.println(carros.consultarCarro("FGR4D89", kwid.getClass()));
+
+        System.out.println("\nTODOS OS CARROS");
+        carros.consultarCarros();
 
 
 
