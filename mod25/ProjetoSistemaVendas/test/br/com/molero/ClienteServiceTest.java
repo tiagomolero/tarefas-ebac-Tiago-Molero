@@ -29,10 +29,21 @@ public class ClienteServiceTest {
     }
 
     @Test
+    public void salvarCliente(){
+        Boolean clienteCadastrado = iClienteService.salvar(cliente);
+        Assert.assertTrue(clienteCadastrado);
+    }
+
+    @Test
     public void buscarCliente(){
         Cliente clienteEncontrado = iClienteService.buscarPorId(cliente.getCpf());
-
         Assert.assertNotNull(clienteEncontrado);
+    }
+
+    @Test
+    public void excluirCliente(){
+        Boolean clienteExcluido = iClienteService.excluir(cliente.getCpf());
+        Assert.assertTrue(clienteExcluido);
     }
 
 
