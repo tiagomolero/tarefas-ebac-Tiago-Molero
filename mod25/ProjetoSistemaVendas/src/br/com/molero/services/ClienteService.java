@@ -3,8 +3,13 @@ package br.com.molero.services;
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
+import br.com.molero.generics.services.GenericService;
+import br.com.molero.generics.services.IGenericService;
 
-public class ClienteService implements IClienteService {
+import java.util.Collection;
+import java.util.List;
+
+public class ClienteService implements IGenericService {
 
     private IClienteDAO iClienteDAO;
 
@@ -12,23 +17,29 @@ public class ClienteService implements IClienteService {
         this.iClienteDAO = iClienteDAO;
     }
 
+
     @Override
-    public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
-        return iClienteDAO.cadastrar(cliente);
+    public Boolean cadastrar(Object entity) throws TipoChaveNaoEncontradaException {
+        return iClienteDAO.cadastrar((Cliente) entity);
     }
 
     @Override
-    public Cliente buscarPorId(Long cpf) {
-        return iClienteDAO.consultar(cpf);
+    public void excluir(Long valor) {
+        iClienteDAO.excluir(valor);
     }
 
     @Override
-    public void excluir(Long cpf) {
-        iClienteDAO.excluir(cpf);
+    public void alterar(Object entity) throws TipoChaveNaoEncontradaException {
+        iClienteDAO.alterar((Cliente) entity);
     }
 
     @Override
-    public void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException {
-        iClienteDAO.alterar(cliente);
+    public Object consultar(Long valor) {
+        return iClienteDAO.consultar(valor);
+    }
+
+    @Override
+    public Collection buscarTodos() {
+        return iClienteDAO.buscarTodos();
     }
 }

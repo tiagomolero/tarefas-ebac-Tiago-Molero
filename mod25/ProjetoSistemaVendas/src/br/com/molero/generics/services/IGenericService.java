@@ -4,7 +4,7 @@ import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 
 import java.util.Collection;
 
-public interface IGenericService<T> {
+public interface IGenericService<T>  {
 
     public Boolean cadastrar(T entity) throws TipoChaveNaoEncontradaException;
     public void excluir(Long valor);

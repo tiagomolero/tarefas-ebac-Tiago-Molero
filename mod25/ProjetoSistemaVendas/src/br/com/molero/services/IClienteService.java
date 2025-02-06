@@ -2,11 +2,9 @@ package br.com.molero.services;
 
 import br.com.molero.domain.Cliente;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
+import br.com.molero.generics.services.IGenericService;
 
-public interface IClienteService {
+public interface IClienteService extends IGenericService<Cliente> {
 
-    Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException;
-    Cliente buscarPorId(Long cpf);
-    public void excluir(Long cpf);
-    public void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException;
+
 }

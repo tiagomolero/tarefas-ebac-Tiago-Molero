@@ -3,15 +3,15 @@ package br.com.molero;
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
+import br.com.molero.generics.services.IGenericService;
 import br.com.molero.mock.ClienteDAOMock;
 import br.com.molero.services.ClienteService;
-import br.com.molero.services.IClienteService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ClienteServiceTest {
-    private IClienteService iClienteService;
+    private IGenericService iClienteService;
     private Cliente cliente;
 
     public ClienteServiceTest(){
@@ -26,30 +26,32 @@ public class ClienteServiceTest {
         cliente.setCpf(12312312312L);
         cliente.setEndereco("Rua X");
         cliente.setContato(11999999999L);
-        iClienteService.salvar(cliente);
+        iClienteService.cadastrar(cliente);
     }
 
     @Test
     public void salvarCliente() throws TipoChaveNaoEncontradaException {
-        Boolean clienteCadastrado = iClienteService.salvar(cliente);
+        Boolean clienteCadastrado = iClienteService.cadastrar(cliente);
         Assert.assertTrue(clienteCadastrado);
     }
 
     @Test
     public void buscarCliente(){
-        Cliente clienteEncontrado = iClienteService.buscarPorId(cliente.getCpf());
+        Cliente clienteEncontrado = (Cliente) iClienteService.consultar(cliente.getCpf());
         Assert.assertNotNull(clienteEncontrado);
     }
 
     @Test
     public void excluirCliente(){
         iClienteService.excluir(cliente.getCpf());
+        Assert.assertNotNull(cliente.getCpf());
     }
 
     @Test
     public void alterarCliente() throws TipoChaveNaoEncontradaException {
         cliente.setNome("Tiago Molero");
         iClienteService.alterar(cliente);
+        Assert.assertEquals("Tiago Molero", cliente.getNome());
     }
 
 
