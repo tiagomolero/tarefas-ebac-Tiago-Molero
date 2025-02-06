@@ -2,6 +2,7 @@ package br.com.molero;
 
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
+import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 import br.com.molero.mock.ClienteDAOMock;
 import br.com.molero.services.ClienteService;
 import br.com.molero.services.IClienteService;
@@ -19,7 +20,7 @@ public class ClienteServiceTest {
     }
 
     @Before
-    public void init(){
+    public void init() throws TipoChaveNaoEncontradaException {
         cliente = new Cliente();
         cliente.setNome("Tiago");
         cliente.setCpf(12312312312L);
@@ -29,7 +30,7 @@ public class ClienteServiceTest {
     }
 
     @Test
-    public void salvarCliente(){
+    public void salvarCliente() throws TipoChaveNaoEncontradaException {
         Boolean clienteCadastrado = iClienteService.salvar(cliente);
         Assert.assertTrue(clienteCadastrado);
     }
@@ -42,15 +43,13 @@ public class ClienteServiceTest {
 
     @Test
     public void excluirCliente(){
-        Boolean clienteExcluido = iClienteService.excluir(cliente.getCpf());
-        Assert.assertTrue(clienteExcluido);
+        iClienteService.excluir(cliente.getCpf());
     }
 
     @Test
-    public void alterarCliente(){
+    public void alterarCliente() throws TipoChaveNaoEncontradaException {
         cliente.setNome("Tiago Molero");
-        Cliente clienteAlterado = iClienteService.alterar(cliente);
-        Assert.assertEquals("Tiago Molero", clienteAlterado.getNome());
+        iClienteService.alterar(cliente);
     }
 
 

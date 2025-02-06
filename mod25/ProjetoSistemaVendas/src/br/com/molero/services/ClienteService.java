@@ -1,8 +1,9 @@
 package br.com.molero.services;
 
-import br.com.molero.dao.ClienteDAO;
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
+import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
+import br.com.molero.generics.GenericDAO;
 
 public class ClienteService implements IClienteService {
 
@@ -12,26 +13,23 @@ public class ClienteService implements IClienteService {
         this.iClienteDAO = iClienteDAO;
     }
 
-
     @Override
-    public Boolean salvar(Cliente cliente) {
-        return iClienteDAO.salvar(cliente);
+    public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
+        return iClienteDAO.cadastrar(cliente);
     }
 
     @Override
     public Cliente buscarPorId(Long cpf) {
-        Cliente clientEncontrado = iClienteDAO.buscarPorId(cpf);
-        return clientEncontrado;
+        return iClienteDAO.consultar(cpf);
     }
 
     @Override
-    public Boolean excluir(Long cpf) {
-        Boolean clienteExcluido = iClienteDAO.excluir(cpf);
-        return clienteExcluido;
+    public void excluir(Long cpf) {
+        iClienteDAO.excluir(cpf);
     }
 
     @Override
-    public Cliente alterar(Cliente cliente) {
-        return cliente;
+    public void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException {
+        iClienteDAO.alterar(cliente);
     }
 }

@@ -3,27 +3,37 @@ package br.com.molero.mock;
 import br.com.molero.dao.ClienteDAO;
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
+import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
+
+import java.util.Collection;
+import java.util.List;
 
 public class ClienteDAOMock implements IClienteDAO {
+
     @Override
-    public Boolean salvar(Cliente cliente) {
+    public Boolean cadastrar(Cliente entity) throws TipoChaveNaoEncontradaException {
         return true;
     }
 
     @Override
-    public Cliente buscarPorId(Long cpf) {
+    public void excluir(Long valor) {
+
+    }
+
+    @Override
+    public void alterar(Cliente entity) throws TipoChaveNaoEncontradaException {
+
+    }
+
+    @Override
+    public Cliente consultar(Long valor) {
         Cliente cliente = new Cliente();
-        cliente.setCpf(cpf);
+        cliente.setCpf(valor);
         return cliente;
     }
 
     @Override
-    public Boolean excluir(Long cpf) {
-        return true;
-    }
-
-    @Override
-    public Cliente alterar(Cliente cliente) {
-        return cliente;
+    public Collection<Cliente> buscarTodos() {
+        return List.of();
     }
 }

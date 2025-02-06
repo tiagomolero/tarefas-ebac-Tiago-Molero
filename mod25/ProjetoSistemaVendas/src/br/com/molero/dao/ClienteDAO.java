@@ -1,25 +1,17 @@
 package br.com.molero.dao;
 
 import br.com.molero.domain.Cliente;
+import br.com.molero.generics.GenericDAO;
 
-public class ClienteDAO implements IClienteDAO{
+public class ClienteDAO extends GenericDAO<Cliente> implements IClienteDAO{
+
     @Override
-    public Boolean salvar(Cliente cliente) {
-        return true;
+    public Class<Cliente> getTipoClasse() {
+        return Cliente.class;
     }
 
     @Override
-    public Cliente buscarPorId(Long cpf) {
-        return null;
-    }
+    public void atualiarDados(Cliente entity, Cliente entityCadastrado) {
 
-    @Override
-    public Boolean excluir(Long cpf) {
-        return true;
-    }
-
-    @Override
-    public Cliente alterar(Cliente cliente) {
-        return cliente;
     }
 }

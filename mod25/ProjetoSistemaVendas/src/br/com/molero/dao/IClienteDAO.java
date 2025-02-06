@@ -1,11 +1,8 @@
 package br.com.molero.dao;
 
 import br.com.molero.domain.Cliente;
+import br.com.molero.generics.IGenericDAO;
 
-public interface IClienteDAO {
+public interface IClienteDAO extends IGenericDAO<Cliente> {
 
-    Boolean salvar(Cliente cliente);
-    Cliente buscarPorId(Long cpf);
-    Boolean excluir(Long cpf);
-    Cliente alterar(Cliente cliente);
 }

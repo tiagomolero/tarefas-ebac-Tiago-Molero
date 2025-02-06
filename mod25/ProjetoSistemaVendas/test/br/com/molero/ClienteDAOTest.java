@@ -3,6 +3,7 @@ package br.com.molero;
 import br.com.molero.dao.ClienteDAO;
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
+import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 import br.com.molero.mock.ClienteDAOMock;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,28 +27,27 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void salvar(){
-        Boolean clienteSalvo = iClienteDAO.salvar(cliente);
+    public void salvar() throws TipoChaveNaoEncontradaException {
+        Boolean clienteSalvo = iClienteDAO.cadastrar(cliente);
         Assert.assertTrue(clienteSalvo);
     }
 
     @Test
     public void buscarPorID(){
-        Cliente clienteEncontrado = iClienteDAO.buscarPorId(cliente.getCpf());
+        Cliente clienteEncontrado = iClienteDAO.consultar(cliente.getCpf());
         Assert.assertNotNull(clienteEncontrado);
     }
 
     @Test
     public void excluir(){
-        Boolean clienteExcluido = iClienteDAO.excluir(cliente.getCpf());
-        Assert.assertTrue(clienteExcluido);
+        iClienteDAO.excluir(cliente.getCpf());
     }
 
     @Test
-    public void alterarCliente(){
+    public void alterarCliente() throws TipoChaveNaoEncontradaException {
         cliente.setNome("Tiago Molero");
-        Cliente clienteAlterado = iClienteDAO.alterar(cliente);
-        Assert.assertEquals("Tiago Molero", clienteAlterado.getNome());
+        iClienteDAO.alterar(cliente);
+        Assert.assertEquals("Tiago Molero", cliente.getNome());
     }
 
 }
