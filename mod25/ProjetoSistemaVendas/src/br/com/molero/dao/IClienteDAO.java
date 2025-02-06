@@ -4,7 +4,7 @@ import br.com.molero.domain.Cliente;
 
 public interface IClienteDAO {
 
-    public void salvar(Cliente cliente);
-    public Cliente buscarPorId(Long cpf);
-
+    Boolean salvar(Cliente cliente);
+    Cliente buscarPorId(Long cpf);
+    Boolean excluir(Long cpf);
 }
