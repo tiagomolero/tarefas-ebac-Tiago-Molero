@@ -1,4 +1,4 @@
-package br.com.molero.generics;
+package br.com.molero.generics.dao;
 
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 

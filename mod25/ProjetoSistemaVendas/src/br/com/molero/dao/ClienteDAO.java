@@ -1,7 +1,7 @@
 package br.com.molero.dao;
 
 import br.com.molero.domain.Cliente;
-import br.com.molero.generics.GenericDAO;
+import br.com.molero.generics.dao.GenericDAO;
 
 public class ClienteDAO extends GenericDAO<Cliente> implements IClienteDAO{
 

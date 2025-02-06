@@ -3,7 +3,6 @@ package br.com.molero.services;
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
-import br.com.molero.generics.GenericDAO;
 
 public class ClienteService implements IClienteService {
 
