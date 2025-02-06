@@ -29,4 +29,9 @@ public class ClienteService implements IClienteService {
         Boolean clienteExcluido = iClienteDAO.excluir(cpf);
         return clienteExcluido;
     }
+
+    @Override
+    public Cliente alterar(Cliente cliente) {
+        return cliente;
+    }
 }

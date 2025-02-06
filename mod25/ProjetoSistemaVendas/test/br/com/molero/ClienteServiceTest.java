@@ -46,5 +46,12 @@ public class ClienteServiceTest {
         Assert.assertTrue(clienteExcluido);
     }
 
+    @Test
+    public void alterarCliente(){
+        cliente.setNome("Tiago Molero");
+        Cliente clienteAlterado = iClienteService.alterar(cliente);
+        Assert.assertEquals("Tiago Molero", clienteAlterado.getNome());
+    }
+
 
 }

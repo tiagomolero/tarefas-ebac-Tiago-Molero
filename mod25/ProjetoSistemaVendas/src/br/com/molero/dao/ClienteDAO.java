@@ -17,4 +17,9 @@ public class ClienteDAO implements IClienteDAO{
     public Boolean excluir(Long cpf) {
         return true;
     }
+
+    @Override
+    public Cliente alterar(Cliente cliente) {
+        return cliente;
+    }
 }
