@@ -14,13 +14,19 @@ public class ClienteService implements IClienteService {
 
 
     @Override
-    public void salvar(Cliente cliente) {
-        iClienteDAO.salvar(cliente);
+    public Boolean salvar(Cliente cliente) {
+        return iClienteDAO.salvar(cliente);
     }
 
     @Override
     public Cliente buscarPorId(Long cpf) {
         Cliente clientEncontrado = iClienteDAO.buscarPorId(cpf);
         return clientEncontrado;
+    }
+
+    @Override
+    public Boolean excluir(Long cpf) {
+        Boolean clienteExcluido = iClienteDAO.excluir(cpf);
+        return clienteExcluido;
     }
 }
