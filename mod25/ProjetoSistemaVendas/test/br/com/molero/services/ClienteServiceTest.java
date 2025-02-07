@@ -1,11 +1,10 @@
-package br.com.molero;
+package br.com.molero.services;
 
 import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 import br.com.molero.generics.services.IGenericService;
 import br.com.molero.mock.ClienteDAOMock;
-import br.com.molero.services.ClienteService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

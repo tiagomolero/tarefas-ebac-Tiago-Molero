@@ -1,7 +1,5 @@
-package br.com.molero;
+package br.com.molero.dao;
 
-import br.com.molero.dao.ClienteDAO;
-import br.com.molero.dao.IClienteDAO;
 import br.com.molero.domain.Cliente;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 import br.com.molero.mock.ClienteDAOMock;

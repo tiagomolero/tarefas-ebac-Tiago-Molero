@@ -1,6 +1,7 @@
 package br.com.molero.services;
 
 import br.com.molero.dao.IProduoDAO;
+import br.com.molero.domain.Produto;
 import br.com.molero.exceptions.TipoChaveNaoEncontradaException;
 import br.com.molero.generics.services.IGenericService;
 
@@ -17,7 +18,7 @@ public class ProdutoService implements IGenericService {
 
     @Override
     public Boolean cadastrar(Object entity) throws TipoChaveNaoEncontradaException {
-        return iProduoDAO.cadastrar(entity);
+        return iProduoDAO.cadastrar((Produto) entity);
     }
 
     @Override
@@ -27,7 +28,7 @@ public class ProdutoService implements IGenericService {
 
     @Override
     public void alterar(Object entity) throws TipoChaveNaoEncontradaException {
-        iProduoDAO.alterar(entity);
+        iProduoDAO.alterar((Produto) entity);
     }
 
     @Override
